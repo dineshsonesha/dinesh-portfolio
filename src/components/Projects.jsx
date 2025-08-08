@@ -1,7 +1,10 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
-// Animation variants
+import project1 from "../assets/project_1.svg";
+import project2 from "../assets/project_2.svg";
+import project7 from "../assets/project_7.png";
+
 const container = {
   hidden: {},
   show: {
@@ -13,7 +16,7 @@ const container = {
 
 const cardVariant = {
   hidden: { opacity: 0, scale: 0.9, y: 30 },
-  show: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
+  show: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
 export default function Projects() {
@@ -22,7 +25,7 @@ export default function Projects() {
       id: 1,
       title: "E-commerce Website",
       desc: "A full-stack shopping platform with user authentication, product filtering, cart and payment integration.",
-      image: "/src/assets/project_1.svg",
+      image: project1,
       tech: ["React", "Spring Boot", "MySQL"],
       link: "#",
     },
@@ -30,7 +33,7 @@ export default function Projects() {
       id: 2,
       title: "Library Management System",
       desc: "Desktop-based software for managing library inventory, issuing books, and tracking student activity.",
-      image: "/src/assets/project_2.svg",
+      image: project2,
       tech: ["Java", "MySQL"],
       link: "#",
     },
@@ -38,7 +41,7 @@ export default function Projects() {
       id: 3,
       title: "Portfolio Website",
       desc: "A personal responsive portfolio to showcase projects, skills, and contact information.",
-      image: "/src/assets/project_3.svg",
+      image: project7,
       tech: ["React", "Tailwind CSS"],
       link: "#",
     },
@@ -48,10 +51,13 @@ export default function Projects() {
     <section id="projects" className="py-15 px-4 text-white">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl md:text-5xl font-bold mb-12">
-          Creative <span className="bg-gradient-to-br from-[#e9615e] to-[#ec9956] bg-clip-text text-transparent">Projects</span>
+          Creative{" "}
+          <span className="bg-gradient-to-br from-[#e9615e] to-[#ec9956] bg-clip-text text-transparent">
+            Projects
+          </span>
         </h2>
 
-        <motion.div
+        <motion.div 
           variants={container}
           initial="hidden"
           whileInView="show"
@@ -64,10 +70,7 @@ export default function Projects() {
               variants={cardVariant}
               className="relative group rounded-2xl p-[2px] transition-all duration-300 hover:scale-105"
             >
-              {/* Hover Gradient Border Blur */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#e9615e] to-[#ec9956] opacity-0 group-hover:opacity-100 blur-sm transition-all duration-300 z-0"></div>
-
-              {/* Project Card Content */}
               <div className="relative z-10 flex flex-col h-full bg-[#111827] rounded-2xl overflow-hidden shadow-lg">
                 <img
                   src={project.image}

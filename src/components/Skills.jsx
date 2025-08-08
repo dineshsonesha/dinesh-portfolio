@@ -12,16 +12,10 @@ const skills = [
   { name: 'Java', icon: <FaJava className="text-red-500" /> },
   { name: 'Spring Boot', icon: <SiSpringboot className="text-green-500" /> },
   { name: 'MySQL', icon: <SiMysql className="text-blue-500" /> },
-  { name: 'MongoDB', icon: <SiMongodb className="text-green-400" /> },
   { name: 'Postman', icon: <i className="devicon-postman-plain colored text-2xl"></i> },
   { name: 'Bootstrap', icon: <i className="devicon-bootstrap-plain colored text-2xl"></i> },
-  { name: 'Node.js', icon: <FaNodeJs className="text-green-500" /> },
-  { name: 'Angular', icon: <FaAngular className="text-red-600" /> },
-  { name: 'Express', icon: <i className="devicon-express-original text-white text-2xl"></i> },
-  { name: 'Python', icon: <FaPython className="text-yellow-300" /> },
 ];
 
-// Animation variants
 const container = {
   hidden: {},
   show: {

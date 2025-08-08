@@ -1,5 +1,6 @@
 {
   "name": "portfolio-react",
+  "homepage": "https://dineshsonesha.github.io/dinesh-portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +8,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build ",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -21,6 +24,7 @@
     "react-fast-marquee": "^1.6.5",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.7.1",
+    "react-router-hash-link": "^2.4.3",
     "remixicon": "^4.6.0",
     "swiper": "^11.2.10"
   },

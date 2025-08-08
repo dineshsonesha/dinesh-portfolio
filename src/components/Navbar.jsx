@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
+import { HashLink } from "react-router-hash-link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,32 +26,33 @@ export default function Navbar() {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex gap-10 items-center text-white text-[1.05rem] font-medium font-poppins">
-        <a href="#home" className="group relative text-white text-[1.05rem] font-medium font-poppins pb-1">
+        <HashLink smooth to="#home" className="group relative pb-1">
           Home
           <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-[#e9615e] to-[#ec9956] transition-all duration-300 group-hover:w-full"></span>
-        </a>
-        <a href="#about" className="group relative pb-1 text-white" onClick={toggleMenu}>
+        </HashLink>
+        <HashLink smooth to="#about" className="group relative pb-1">
           About
           <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-[#e9615e] to-[#ec9956] transition-all duration-300 group-hover:w-full"></span>
-        </a>
-        <a href="#skills" className="group relative pb-1 text-white" onClick={toggleMenu}>
+        </HashLink>
+        <HashLink smooth to="#skills" className="group relative pb-1">
           Skills
           <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-[#e9615e] to-[#ec9956] transition-all duration-300 group-hover:w-full"></span>
-        </a>
-        <a href="#projects" className="group relative pb-1 text-white" onClick={toggleMenu}>
+        </HashLink>
+        <HashLink smooth to="#projects" className="group relative pb-1">
           Projects
           <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-[#e9615e] to-[#ec9956] transition-all duration-300 group-hover:w-full"></span>
-        </a>
-        <a href="#services" className="group relative pb-1 text-white" onClick={toggleMenu}>
+        </HashLink>
+        <HashLink smooth to="#services" className="group relative pb-1">
           Role
           <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-[#e9615e] to-[#ec9956] transition-all duration-300 group-hover:w-full"></span>
-        </a>
-        <a
-          href="#contact"
+        </HashLink>
+        <HashLink
+          smooth
+          to="#contact"
           className="ml-4 bg-gradient-to-br from-[#e9615e] to-[#ec9956] px-6 py-2 text-white font-bold rounded-full shadow-md hover:shadow-[0_0_12px_2px_rgba(255,120,50,0.5)] hover:brightness-110 hover:scale-105 transition duration-300"
         >
           Contact
-        </a>
+        </HashLink>
       </div>
 
       {/* Mobile Menu Icon */}
@@ -58,7 +60,7 @@ export default function Navbar() {
         {isOpen ? <FiX /> : <FiMenu />}
       </div>
 
-      {/* AnimatePresence for smooth menu exit */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -68,17 +70,29 @@ export default function Navbar() {
             transition={{ duration: 0.3 }}
             className="absolute top-[80px] left-0 w-full bg-[#1b1e2c]/95 rounded-b-2xl px-6 py-5 flex flex-col items-center gap-5 text-white font-medium text-[1.05rem] md:hidden shadow-md border-t border-white/10 font-poppins"
           >
-            <a href="#home" className="hover:text-orange-400" onClick={toggleMenu}>Home</a>
-            <a href="#about" className="hover:text-orange-400" onClick={toggleMenu}>About</a>
-            <a href="#skills" className="hover:text-orange-400" onClick={toggleMenu}>Skills</a>
-            <a href="#projects" className="hover:text-orange-400" onClick={toggleMenu}>Projects</a>
-            <a href="#services" className="hover:text-orange-400" onClick={toggleMenu}>Services</a>
-            <button
+            <HashLink smooth to="#home" onClick={toggleMenu} className="hover:text-orange-400">
+              Home
+            </HashLink>
+            <HashLink smooth to="#about" onClick={toggleMenu} className="hover:text-orange-400">
+              About
+            </HashLink>
+            <HashLink smooth to="#skills" onClick={toggleMenu} className="hover:text-orange-400">
+              Skills
+            </HashLink>
+            <HashLink smooth to="#projects" onClick={toggleMenu} className="hover:text-orange-400">
+              Projects
+            </HashLink>
+            <HashLink smooth to="#services" onClick={toggleMenu} className="hover:text-orange-400">
+              Services
+            </HashLink>
+            <HashLink
+              smooth
+              to="#contact"
               onClick={toggleMenu}
               className="bg-gradient-to-br from-[#e9615e] to-[#ec9956] px-6 py-2 text-white font-bold rounded-full hover:shadow-[0_0_12px_2px_rgba(255,120,50,0.5)] hover:brightness-110 hover:scale-105 transition duration-300"
             >
               Contact
-            </button>
+            </HashLink>
           </motion.div>
         )}
       </AnimatePresence>
