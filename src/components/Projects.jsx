@@ -43,7 +43,7 @@ export default function Projects() {
       desc: "A personal responsive portfolio to showcase projects, skills, and contact information.",
       image: project7,
       tech: ["React", "Tailwind CSS"],
-      link: "#",
+      link: "https://dinesh-portfolio-mu.vercel.app/",
     },
   ];
 
