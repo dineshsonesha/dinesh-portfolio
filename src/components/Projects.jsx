@@ -1,9 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import project1 from "../assets/project_1.svg";
-import project2 from "../assets/project_2.svg";
-import project7 from "../assets/project_7.png";
+import project1 from "../assets/project_1.png";
+import project2 from "../assets/project_2.png";
+import project7 from "../assets/project_3.png";
 
 const container = {
   hidden: {},
@@ -23,19 +23,19 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: "E-commerce Website",
-      desc: "A full-stack shopping platform with user authentication, product filtering, cart and payment integration.",
+      title: "GemixAI",
+      desc: "An AI-powered platform for generating resumes, enhancing skills, and providing personalized career growth assistance.",
       image: project1,
-      tech: ["React", "Spring Boot", "MySQL"],
-      link: "#",
+      tech: ["React", "Express.js", "MongoDB", "OpenAI API"],
+      link: "https://gemix-ai.vercel.app/",
     },
     {
       id: 2,
-      title: "Library Management System",
-      desc: "Desktop-based software for managing library inventory, issuing books, and tracking student activity.",
+      title: "JobReadify",
+      desc: "A modern job search and application platform that simplifies resume screening and connects candidates with opportunities.",
       image: project2,
-      tech: ["Java", "MySQL"],
-      link: "#",
+      tech: ["React", "Express.js", "MongoDB", "OpenAI API"],
+      link: "https://job-readify.vercel.app/",
     },
     {
       id: 3,
@@ -57,7 +57,7 @@ export default function Projects() {
           </span>
         </h2>
 
-        <motion.div 
+        <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
