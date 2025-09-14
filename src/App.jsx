@@ -1,21 +1,19 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import Index from './Index'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
+// App.jsx
+import React from "react";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Index from "./Index";
 
 function App() {
   return (
     <>
       <Navbar />
       <div className="pt-20">
-        <Routes>
-          <Route path="/" element={<Index />} />
-        </Routes>
+        <Index />
         <Footer />
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
