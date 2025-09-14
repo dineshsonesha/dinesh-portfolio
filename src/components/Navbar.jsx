@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
-import { HashLink } from "react-router-hash-link";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  const menuItems = [
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
+    { label: "Skills", href: "#skills" },
+    { label: "Projects", href: "#projects" },
+    { label: "Role", href: "#services" },
+  ];
 
   return (
     <motion.nav
@@ -26,37 +33,25 @@ export default function Navbar() {
 
       {/* Desktop Menu */}
       <div className="hidden md:flex gap-10 items-center text-white text-[1.05rem] font-medium font-poppins">
-        <HashLink smooth to="#home" className="group relative pb-1">
-          Home
-          <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-[#e9615e] to-[#ec9956] transition-all duration-300 group-hover:w-full"></span>
-        </HashLink>
-        <HashLink smooth to="#about" className="group relative pb-1">
-          About
-          <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-[#e9615e] to-[#ec9956] transition-all duration-300 group-hover:w-full"></span>
-        </HashLink>
-        <HashLink smooth to="#skills" className="group relative pb-1">
-          Skills
-          <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-[#e9615e] to-[#ec9956] transition-all duration-300 group-hover:w-full"></span>
-        </HashLink>
-        <HashLink smooth to="#projects" className="group relative pb-1">
-          Projects
-          <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-[#e9615e] to-[#ec9956] transition-all duration-300 group-hover:w-full"></span>
-        </HashLink>
-        <HashLink smooth to="#services" className="group relative pb-1">
-          Role
-          <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-[#e9615e] to-[#ec9956] transition-all duration-300 group-hover:w-full"></span>
-        </HashLink>
-        <HashLink
-          smooth
-          to="#contact"
+        {menuItems.map((item) => (
+          <a key={item.href} href={item.href} className="group relative pb-1">
+            {item.label}
+            <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-gradient-to-r from-[#e9615e] to-[#ec9956] transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        ))}
+        <a
+          href="#contact"
           className="ml-4 bg-gradient-to-br from-[#e9615e] to-[#ec9956] px-6 py-2 text-white font-bold rounded-full shadow-md hover:shadow-[0_0_12px_2px_rgba(255,120,50,0.5)] hover:brightness-110 hover:scale-105 transition duration-300"
         >
           Contact
-        </HashLink>
+        </a>
       </div>
 
       {/* Mobile Menu Icon */}
-      <div className="md:hidden text-white text-2xl cursor-pointer" onClick={toggleMenu}>
+      <div
+        className="md:hidden text-white text-2xl cursor-pointer"
+        onClick={toggleMenu}
+      >
         {isOpen ? <FiX /> : <FiMenu />}
       </div>
 
@@ -70,29 +65,23 @@ export default function Navbar() {
             transition={{ duration: 0.3 }}
             className="absolute top-[80px] left-0 w-full bg-[#1b1e2c]/95 rounded-b-2xl px-6 py-5 flex flex-col items-center gap-5 text-white font-medium text-[1.05rem] md:hidden shadow-md border-t border-white/10 font-poppins"
           >
-            <HashLink smooth to="#home" onClick={toggleMenu} className="hover:text-orange-400">
-              Home
-            </HashLink>
-            <HashLink smooth to="#about" onClick={toggleMenu} className="hover:text-orange-400">
-              About
-            </HashLink>
-            <HashLink smooth to="#skills" onClick={toggleMenu} className="hover:text-orange-400">
-              Skills
-            </HashLink>
-            <HashLink smooth to="#projects" onClick={toggleMenu} className="hover:text-orange-400">
-              Projects
-            </HashLink>
-            <HashLink smooth to="#services" onClick={toggleMenu} className="hover:text-orange-400">
-              Services
-            </HashLink>
-            <HashLink
-              smooth
-              to="#contact"
+            {menuItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={toggleMenu}
+                className="hover:text-orange-400"
+              >
+                {item.label}
+              </a>
+            ))}
+            <a
+              href="#contact"
               onClick={toggleMenu}
               className="bg-gradient-to-br from-[#e9615e] to-[#ec9956] px-6 py-2 text-white font-bold rounded-full hover:shadow-[0_0_12px_2px_rgba(255,120,50,0.5)] hover:brightness-110 hover:scale-105 transition duration-300"
             >
               Contact
-            </HashLink>
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
